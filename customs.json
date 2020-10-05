@@ -1,0 +1,14 @@
+{
+    "elements": {},
+    "attributes": {
+        "th:text": {
+            "context": "span"
+        },
+        "integrity": {
+            "context": "link"
+        },
+        "th:each": {
+            "context": "tr"
+        }
+    }
+}

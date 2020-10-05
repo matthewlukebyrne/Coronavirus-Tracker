@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Coronavirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+<nav class="navbar navbar-light bg-dark">
+    <span class="navbar-brand mb-0 h1 text-light text-right">Coronavirus Application Spring Demo</span>
+</nav>
+
+<div class="container">
+    <p class="font-weight-bold text-center p-5 alert alert-danger">This application lists the current number of cases reported across the globe in realtime.</p>
+
+    <div class="jumbotron alert alert-warning p-5">
+        <p class="lead font-weight-bold">Total cases reported as of today</p>
+        <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+        <hr class="my-4">
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Country</th>
+            <th>Latest Total Cases</th>
+            <th>Total recovered</th>
+            <th>Total Deaths</th>
+        </tr>
+        <tr th:each="locationStat : ${locationStats}">
+            <td th:text="${locationStat.country}"></td>
+            <td th:text="${locationStat.latestTotalCases}">0</td>
+            <td th:text="${locationStat.recovered}"></td>
+            <td th:text="${locationStat.deaths}"></td>
+
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>
+
+<!--Construction of a table using Thymeleaf to then iterate over the data with a for each loop-->
+
+<!--https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html-->
+
+<!--https://www.thymeleaf.org/-- >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
